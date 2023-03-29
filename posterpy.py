@@ -24,6 +24,16 @@ banner = (r'''
 
 print(banner)
 
+# This code is a function that checks for a valid API key.
+# It first checks if there is an existing file called "api.txt"
+# and if it contains any data. If so, it reads the data from the
+# file and attempts to make a request using the API key. 
+# If the request is successful, it prints a message and returns the key.
+# If not, it prompts the user to register for an API key and
+# then attempts to make a request with the new key. 
+# If successful, it writes the new key to "api.txt". 
+# Otherwise, it prints an error message.
+
 def api_key():
 
     SAMPLE_URL = 'https://api.themoviedb.org/3/movie/76341?api_key={0}'
@@ -50,7 +60,13 @@ def api_key():
                 print("\nInvalid API key: You must be granted a valid key.")
     except OSError:
         print("\nUnknown Error")
-
+        
+# This code defines a function called search_movie() 
+#that searches for a movie based on user input. 
+#It uses the Cinemagoer library to search for movies and 
+#stores the results in a list. It then creates a list of choices
+#from the results and presents them to the user using questionary.
+#Finally, it returns the IMDB ID of the movie selected by the user.
 def search_movie():
 
     try:

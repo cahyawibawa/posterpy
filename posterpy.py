@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# coded by sameera madushan
 
 import os
 import shutil
@@ -7,7 +6,7 @@ from tkinter import Tk, filedialog
 import requests
 from PIL import Image, ImageOps
 from tqdm import tqdm
-import imdb
+from imdb import Cinemagoer
 import questionary
 
 banner = (r'''
@@ -55,7 +54,7 @@ def api_key():
 def search_movie():
 
     try:
-        ia = imdb.IMDb()
+        ia = Cinemagoer()
         user_input = input("Search for a movie: ")
         print("\n", end="")
         movies = ia.search_movie(user_input)
